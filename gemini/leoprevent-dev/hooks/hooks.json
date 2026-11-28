@@ -1,0 +1,41 @@
+{
+  "hooks": {
+    "BeforeAgent": [
+      {
+        "hooks": [
+          {
+            "name": "leoprevent-baseline",
+            "type": "command",
+            "command": "\"${extensionPath}/bin/leoprevent-plugin\" --agent=gemini",
+            "timeout": 30000
+          }
+        ]
+      }
+    ],
+    "BeforeTool": [
+      {
+        "matcher": "^(write_file|replace|run_shell_command)$",
+        "hooks": [
+          {
+            "name": "leoprevent-discovery",
+            "type": "command",
+            "command": "\"${extensionPath}/bin/leoprevent-plugin\" --agent=gemini",
+            "timeout": 10000
+          }
+        ]
+      }
+    ],
+    "AfterAgent": [
+      {
+        "hooks": [
+          {
+            "name": "leoprevent-review",
+            "type": "command",
+            "command": "\"${extensionPath}/bin/leoprevent-plugin\" --agent=gemini",
+            "timeout": 600000
+          }
+        ]
+      }
+    ]
+  }
+}

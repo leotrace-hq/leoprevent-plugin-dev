@@ -1,0 +1,30 @@
+{
+  "leoprevent": {
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "./bin/leoprevent-plugin --agent=antigravity",
+        "timeout": 30
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./bin/leoprevent-plugin --agent=antigravity",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "type": "command",
+        "command": "./bin/leoprevent-plugin --agent=antigravity",
+        "timeout": 600
+      }
+    ]
+  }
+}

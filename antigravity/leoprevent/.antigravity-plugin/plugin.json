@@ -1,0 +1,8 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "leoprevent-dev",
+  "displayName": "LeoPrevent",
+  "version": "0.2.53-dev.8873ffa",
+  "description": "Reviews Antigravity changes and sends security findings back through its Stop hook.",
+  "homepage": "https://leotrace.io"
+}
